@@ -7,7 +7,7 @@ import static org.assertj.core.api.Assertions.fail;
 import java.net.SocketException;
 import java.util.concurrent.TimeUnit;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;

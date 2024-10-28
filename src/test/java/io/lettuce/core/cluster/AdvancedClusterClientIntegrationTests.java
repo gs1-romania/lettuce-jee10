@@ -19,28 +19,6 @@
  */
 package io.lettuce.core.cluster;
 
-import static io.lettuce.TestTags.INTEGRATION_TEST;
-import static io.lettuce.test.LettuceExtension.*;
-import static org.assertj.core.api.Assertions.*;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.stream.Collectors;
-
-import javax.enterprise.inject.New;
-import javax.inject.Inject;
-
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-
 import io.lettuce.core.*;
 import io.lettuce.core.api.StatefulRedisConnection;
 import io.lettuce.core.cluster.api.StatefulRedisClusterConnection;
@@ -53,13 +31,23 @@ import io.lettuce.core.cluster.api.sync.RedisClusterCommands;
 import io.lettuce.core.cluster.models.partitions.Partitions;
 import io.lettuce.core.cluster.models.partitions.RedisClusterNode;
 import io.lettuce.core.codec.Base16;
-import io.lettuce.test.KeysAndValues;
-import io.lettuce.test.LettuceExtension;
-import io.lettuce.test.ListStreamingAdapter;
-import io.lettuce.test.TestFutures;
-import io.lettuce.test.Wait;
+import io.lettuce.test.*;
 import io.lettuce.test.condition.EnabledOnCommand;
 import io.lettuce.test.settings.TestSettings;
+import jakarta.inject.Inject;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+
+import java.util.*;
+import java.util.stream.Collectors;
+
+import static io.lettuce.TestTags.INTEGRATION_TEST;
+import static io.lettuce.test.LettuceExtension.Connection;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /**
  * Integration tests for {@link StatefulRedisClusterConnection}.
@@ -477,7 +465,7 @@ class AdvancedClusterClientIntegrationTests extends TestSupport {
 
     @Test
     @Inject
-    void routeCommandToNoAddrPartition(@New StatefulRedisClusterConnection<String, String> connectionUnderTest) {
+    void routeCommandToNoAddrPartition(StatefulRedisClusterConnection<String, String> connectionUnderTest) {
 
         RedisAdvancedClusterCommands<String, String> sync = connectionUnderTest.sync();
         try {
@@ -548,7 +536,7 @@ class AdvancedClusterClientIntegrationTests extends TestSupport {
 
     @Test
     @Inject
-    void pipelining(@New StatefulRedisClusterConnection<String, String> connectionUnderTest) {
+    void pipelining(StatefulRedisClusterConnection<String, String> connectionUnderTest) {
 
         RedisAdvancedClusterAsyncCommands<String, String> async = connectionUnderTest.async();
         // preheat the first connection

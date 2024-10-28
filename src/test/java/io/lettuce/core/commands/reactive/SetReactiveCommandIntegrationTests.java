@@ -1,6 +1,6 @@
 package io.lettuce.core.commands.reactive;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 
 import io.lettuce.core.api.StatefulRedisConnection;
 import io.lettuce.core.commands.SetCommandIntegrationTests;

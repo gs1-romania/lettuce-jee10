@@ -16,7 +16,7 @@ import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Tag
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
-import javax.inject.Inject
+import jakarta.inject.Inject
 
 /**
  * Integration tests for Kotlin Coroutine extensions.

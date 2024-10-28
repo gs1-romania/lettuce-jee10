@@ -2,7 +2,7 @@ package io.lettuce.core.support;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 
 import io.lettuce.core.RedisClient;
 import io.lettuce.core.api.sync.RedisCommands;

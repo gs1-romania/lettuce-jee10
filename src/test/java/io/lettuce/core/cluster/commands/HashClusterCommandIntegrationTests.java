@@ -1,6 +1,6 @@
 package io.lettuce.core.cluster.commands;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 
 import io.lettuce.core.cluster.ClusterTestUtil;
 import io.lettuce.core.cluster.api.StatefulRedisClusterConnection;

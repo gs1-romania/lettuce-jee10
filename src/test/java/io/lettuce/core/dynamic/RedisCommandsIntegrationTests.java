@@ -6,7 +6,7 @@ import static org.assertj.core.api.Assertions.fail;
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.when;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 
 import org.apache.commons.pool2.impl.GenericObjectPool;
 import org.apache.commons.pool2.impl.GenericObjectPoolConfig;

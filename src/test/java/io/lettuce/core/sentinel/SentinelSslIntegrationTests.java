@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 import java.io.File;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Tag;

@@ -8,8 +8,8 @@ import java.time.Duration;
 import java.util.NoSuchElementException;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import javax.enterprise.inject.New;
-import javax.inject.Inject;
+import jakarta.enterprise.context.Dependent;
+import jakarta.inject.Inject;
 
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -47,7 +47,7 @@ class ClientIntegrationTests extends TestSupport {
 
     @Test
     @Inject
-    void close(@New StatefulRedisConnection<String, String> connection) {
+    void close(StatefulRedisConnection<String, String> connection) {
 
         connection.close();
         assertThatThrownBy(() -> connection.sync().get(key)).isInstanceOf(RedisException.class);

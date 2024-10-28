@@ -21,7 +21,7 @@ package biz.paluch.redis.extensibility;
 
 import java.time.Duration;
 
-import javax.enterprise.inject.Alternative;
+import jakarta.enterprise.inject.Alternative;
 
 import io.lettuce.core.RedisChannelWriter;
 import io.lettuce.core.RedisURI;

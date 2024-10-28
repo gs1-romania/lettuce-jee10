@@ -33,7 +33,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;

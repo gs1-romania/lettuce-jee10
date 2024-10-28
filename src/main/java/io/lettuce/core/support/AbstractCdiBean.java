@@ -6,11 +6,11 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.enterprise.inject.Stereotype;
-import javax.enterprise.inject.spi.Bean;
-import javax.enterprise.inject.spi.BeanManager;
-import javax.enterprise.inject.spi.InjectionPoint;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.inject.Stereotype;
+import jakarta.enterprise.inject.spi.Bean;
+import jakarta.enterprise.inject.spi.BeanManager;
+import jakarta.enterprise.inject.spi.InjectionPoint;
 
 import io.lettuce.core.RedisURI;
 import io.lettuce.core.resource.ClientResources;
@@ -77,11 +77,6 @@ abstract class AbstractCdiBean<T> implements Bean<T> {
 
     @Override
     public boolean isAlternative() {
-        return false;
-    }
-
-    @Override
-    public boolean isNullable() {
         return false;
     }
 

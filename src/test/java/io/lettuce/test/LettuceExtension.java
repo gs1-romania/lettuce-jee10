@@ -12,8 +12,8 @@ import java.util.*;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
-import javax.enterprise.inject.New;
-import javax.inject.Inject;
+import jakarta.enterprise.context.Dependent;
+import jakarta.inject.Inject;
 
 import org.junit.jupiter.api.extension.*;
 
@@ -77,7 +77,6 @@ import io.netty.util.internal.logging.InternalLoggerFactory;
  * @since 5.1.1
  * @see ParameterResolver
  * @see Inject
- * @see New
  * @see BeforeEachCallback
  * @see AfterEachCallback
  * @see AfterAllCallback
@@ -126,7 +125,7 @@ public class LettuceExtension implements ParameterResolver, AfterAllCallback, Af
         ExtensionContext.Store store = getStore(extensionContext);
         Parameter parameter = parameterContext.getParameter();
         Type parameterizedType = parameter.getParameterizedType();
-        if (parameterContext.isAnnotated(New.class)) {
+        if (parameterContext.isAnnotated(Dependent.class)) {
 
             Object instance = doGetInstance(parameterizedType);
 

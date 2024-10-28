@@ -1,6 +1,6 @@
 package io.lettuce.core.commands.transactional;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 
 import org.junit.jupiter.api.Disabled;
 

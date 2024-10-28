@@ -1,6 +1,6 @@
 package io.lettuce.core.sentinel.reactive;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 
 import io.lettuce.core.RedisClient;
 import io.lettuce.core.sentinel.SentinelCommandIntegrationTests;

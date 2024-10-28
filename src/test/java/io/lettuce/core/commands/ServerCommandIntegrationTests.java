@@ -28,7 +28,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 
 import io.lettuce.core.cluster.ClusterReadOnlyCommands;
 import io.lettuce.core.protocol.ProtocolKeyword;
